@@ -138,14 +138,14 @@ class DownloadCommand(RequirementCommand):
             options.abi,
             options.implementation,
         ])
-        binary_only = FormatControl(set(), {':all:'})
-        if dist_restriction_set and options.format_control != binary_only:
-            raise CommandError(
-                "--only-binary=:all: must be set and --no-binary must not "
-                "be set (or must be set to :none:) when restricting platform "
-                "and interpreter constraints using --python-version, "
-                "--platform, --abi, or --implementation."
-            )
+        # binary_only = FormatControl(set(), {':all:'})
+        # if dist_restriction_set and options.format_control != binary_only:
+        #     raise CommandError(
+        #         "--only-binary=:all: must be set and --no-binary must not "
+        #         "be set (or must be set to :none:) when restricting platform "
+        #         "and interpreter constraints using --python-version, "
+        #         "--platform, --abi, or --implementation."
+        #     )
 
         options.src_dir = os.path.abspath(options.src_dir)
         options.download_dir = normalize_path(options.download_dir)

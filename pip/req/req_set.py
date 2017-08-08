@@ -105,11 +105,11 @@ class RequirementSet(object):
         # environment markers.
         if install_req.link and install_req.link.is_wheel:
             wheel = Wheel(install_req.link.filename)
-            if not wheel.supported():
-                raise InstallationError(
-                    "%s is not a supported wheel on this platform." %
-                    wheel.filename
-                )
+            # if not wheel.supported():
+            #     raise InstallationError(
+            #         "%s is not a supported wheel on this platform." %
+            #         wheel.filename
+            #     )
 
         install_req.use_user_site = self.use_user_site
         install_req.target_dir = self.target_dir
